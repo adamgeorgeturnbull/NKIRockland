@@ -20,3 +20,8 @@ def delEmptyRows(path, variables):
             print("Warning, multiple files for variable %s" % v) # check that there is only one file for this variable
         file = file[0]
         if df.iloc[0][0] == 'ID': # check if first line contains repeat headers
+            df = df.iloc[1:] # remove repeat headers
+        df_zero = df.fillna(value=0)
+        c = df.columns.get_loc("Days since first enrollment")
+        df_zero = df_zero.iloc[:,c+1:]
+        
