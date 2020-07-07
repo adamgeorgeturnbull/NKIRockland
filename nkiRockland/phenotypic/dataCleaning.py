@@ -1,10 +1,7 @@
-# functions to clean the phenotypic data before merging
+def mergeData(path):
 
-def delEmptyRows(path, variables):
-    
-    # delete rows that contain no information
+    # combine variables into single data sheet
     # path variable defines location of phenotypic data files, COINs download usually called 'assessment_data'
-    # variables defines the specific files you want to clean
     
     import os
     import pandas as pd
@@ -13,15 +10,28 @@ def delEmptyRows(path, variables):
     os.chdir(path) # change path to location of data
     files = sorted(glob('*')) # get list of data files
     
-    for v in variables: # loop through each desired file
-        print("cleaning %s file" % v)
-        file = [s for s in files if v in s]
-        if len(file) > 1:
-            print("Warning, multiple files for variable %s" % v) # check that there is only one file for this variable
-        file = file[0]
-        if df.iloc[0][0] == 'ID': # check if first line contains repeat headers
-            df = df.iloc[1:] # remove repeat headers
-        df_zero = df.fillna(value=0)
-        c = df.columns.get_loc("Days since first enrollment")
-        df_zero = df_zero.iloc[:,c+1:]
-        
+    data = [pd.read_csv(f) for f in files]
+    
+    IDs = []   
+    for d in data:
+        if d.iloc[0][0] == 'ID': # check if first line contains repeat headers
+            d = d.iloc[1:] # remove repeat headers
+        IDs.append(set(d['Anonymized ID']))
+    result = set(IDs[0]) 
+    for currSet in IDs[1:]: 
+        result.intersection_update(currSet) 
+    
+    keys = ['Anonymized ID', 'Subject Type', 'Sub Study Label', 'Visit']
+    df = pd.DataFrame(columns=keys)
+    for d in data:
+        if d.iloc[0][0] == 'ID': # check if first line contains repeat headers
+            d = d.iloc[1:] # remove repeat headers
+        d = d[d['Anonymized ID'].isin(result)]
+        d = d.replace(to_replace=['V1','V2'], value='VA')
+        d = d.replace(to_replace=['V1REP','V2REP'], value='VA-REP')
+        cols = [x for x in d.columns if x not in df.columns or x in keys]
+        df = pd.merge(df, d[cols], on=keys, how='outer', suffixes=['',''])  
+    
+    df.to_csv('../master/master_data_all_timepoints.csv', index=False)
+    
+    
