@@ -1,3 +1,5 @@
 # ignore raw phenotypic data
 
 **/assessment_data
+
+**/master
