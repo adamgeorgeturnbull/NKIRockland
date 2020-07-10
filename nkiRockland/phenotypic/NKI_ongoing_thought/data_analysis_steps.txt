@@ -1,0 +1,17 @@
+n=652, 43 multivariate outliers removed
+14 extreme values replaced with median for guilt question
+25 extreme values replaced with median for angry question
+decided to remove anger question due to lack of variance
+14 extreme values replaced with median for sad question
+decided to remove guilt question due to lack of variance
+checked for collinearity, no real issues
+sad variable removed due to low SMC and variance
+PCA with varimax suggests a 6 factor solution
+PCA with oblimin shows highest correlation is .4 between components, will re-evaluate to determine rotation
+chose to run varimax again with 7 components: gave additional components defined by multiple questions over .6, or 3 or more over .45, so this number was chosen
+7 factor rotated matrix was used to identify cross-loaders, that loaded on 3 components, or were not separated by more than .2 from highest loading to next: possible future interaction, personal worries, near future, family members, important, distant future
+re-ran, clear sense of purpose cross-loads and was removed, as did earlier today
+re-ran oblimin and it showed many pairs of factors that correlated chose 7 factor oblimin solution as final
+re-checked for cross-loaders: interactions that took place in, long time friends, recent past, place close to, current worries
+new solution had recent past alone, removed and re-ran with 6 factor solution: final
+saved scores and ran t-tests across age groups, and MV analyses with cognitive failures, RAVLT, and IQ
