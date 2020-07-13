@@ -7,11 +7,13 @@ decided to remove guilt question due to lack of variance
 checked for collinearity, no real issues
 sad variable removed due to low SMC and variance
 PCA with varimax suggests a 6 factor solution
-PCA with oblimin shows highest correlation is .4 between components, will re-evaluate to determine rotation
-chose to run varimax again with 7 components: gave additional components defined by multiple questions over .6, or 3 or more over .45, so this number was chosen
-7 factor rotated matrix was used to identify cross-loaders, that loaded on 3 components, or were not separated by more than .2 from highest loading to next: possible future interaction, personal worries, near future, family members, important, distant future
-re-ran, clear sense of purpose cross-loads and was removed, as did earlier today
-re-ran oblimin and it showed many pairs of factors that correlated chose 7 factor oblimin solution as final
-re-checked for cross-loaders: interactions that took place in, long time friends, recent past, place close to, current worries
-new solution had recent past alone, removed and re-ran with 6 factor solution: final
-saved scores and ran t-tests across age groups, and MV analyses with cognitive failures, RAVLT, and IQ
+PCA with varimax with 7 and 8 components still adds meaningful components
+PCA with 9 components adds component with single item over .6: 8 is correct
+PCA with oblimin shows highest correlation is .35 between components, will re-evaluate to determine rotation
+Re-run without near future, distant future, or sense of purpose: didn't load more than .6 on any component
+Re-run without interaction, recent past, longtime friends, place close to, important, family members, possible future interaction as they loaded >.4 on more than 4 questions
+Correlations not strong: ran with varimax
+Re-ran without earlier today: loaded less than .6 on any and >.4 on two
+Reduced to 7 factors as final factor only composed of one item
+Checked correlations with oblivion: highest .334 and rest below .32
+Chose varimax 7 component solution as final
