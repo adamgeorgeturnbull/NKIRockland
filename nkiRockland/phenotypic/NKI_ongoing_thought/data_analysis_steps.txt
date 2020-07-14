@@ -1,19 +1,24 @@
-n=652, 43 multivariate outliers removed
-14 extreme values replaced with median for guilt question
-25 extreme values replaced with median for angry question
-decided to remove anger question due to lack of variance
-14 extreme values replaced with median for sad question
-decided to remove guilt question due to lack of variance
-checked for collinearity, no real issues
+n=693
+4 participants removed for missing data
+n=689
+Multivariate outliers calculated as having a probability of MAH distance <.001
+46 multivariate outliers removed
+n=643
+Guilty and angry questions identified as being borderline for skewness and kurtosis
+46 extreme values replaced with median for guilt question
+decided to remove guilt question due to lack of variance (493 participants answered 1, rest were extreme values)
+decided to remove anger question due to lack of variance (515 participants answered 1)
+58 extreme values replaced with median for sad question
+Ran unrotated PCA to check for singularity: lowest eigenvalue was .093
+Got SMC numbers to check for multicollinearity: highest value .836, lowest .190
 sad variable removed due to low SMC and variance
 PCA with varimax suggests a 6 factor solution
-PCA with varimax with 7 and 8 components still adds meaningful components
-PCA with 9 components adds component with single item over .6: 8 is correct
-PCA with oblimin shows highest correlation is .35 between components, will re-evaluate to determine rotation
-Re-run without near future, distant future, or sense of purpose: didn't load more than .6 on any component
-Re-run without interaction, recent past, longtime friends, place close to, important, family members, possible future interaction as they loaded >.4 on more than 4 questions
-Correlations not strong: ran with varimax
-Re-ran without earlier today: loaded less than .6 on any and >.4 on two
-Reduced to 7 factors as final factor only composed of one item
-Checked correlations with oblivion: highest .334 and rest below .32
-Chose varimax 7 component solution as final
+PCA with varimax with 7 components still adds meaningful components
+PCA with varimax with 8 components still adds meaningful components item over .6
+PCA with varimax with 9 components produces component with only one question over .45
+Suggests 8 is correct
+Family members removed due to complexity, near future removed due to not loading on any factor
+Distant future removed due to not loading on any factor
+Changed to 7 factors as final factor now only contained 1 item
+Removed personal worries as it didn't load on any factor
+Oblimin rotation showed 5 factor pairs that correlated >.32, decided to use varimax for ease of interpretation
