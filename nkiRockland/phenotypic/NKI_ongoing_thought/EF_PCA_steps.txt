@@ -1,0 +1,9 @@
+13 participants removed for missing data
+26 participants removed as multivariate outliers
+34 participants replaced with median for vigilance and visual attention
+6 participants replaced with median for working memory
+3 participants replaced with median for word memory
+PCA with varimax rotation suggests between 1 and 5 components
+PCA with 2 components gives another meaningful component
+PCA with 4 components gives component with only one item: suggests three is correct
+PCA with oblimin suggests max correlation is 0.307: suggests varimax is better for interpretation
