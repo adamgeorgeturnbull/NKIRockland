@@ -11,3 +11,5 @@ removed face memory due to cross-loading
 now third component only consists of single item: ran 2 component solution
 removed vigilance and visual attention due to not loading on either component and re-ran: got nice solution, saved variables
 ran MV tests to assess effect of adding EF to thought by age effects
+performed oblimin to check correlation between components: 0.308, stuck with varimax for ease of interpretation
+checked whether the relationship between age and factor 7 might be moderated by executive function: seems appropriate for mediation
