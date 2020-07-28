@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+import os
+import pandas as pd
+import numpy as np
+
+path = '/Users/adamturnbull/GitHub/NKIRockland/nkiRockland/phenotypic/assessment_data/'
+file = '8100_Penn_CNP_(12-18-13)_20200624.csv'
+fileloc = path + file
+
+df = pd.read_csv(fileloc)
