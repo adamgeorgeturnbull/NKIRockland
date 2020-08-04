@@ -1,0 +1,4 @@
+selected only young or old participants
+added PENN variables to thought data
+three participants replaced with median for factor 5
+
